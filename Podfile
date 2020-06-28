@@ -15,7 +15,7 @@ pod 'Firebase/Analytics'
 
 # Pods for Instagram
 
-pod 'Firebase','6.11.0'
+pod 'Firebase','6.27.0'
   pod 'Firebase/Analytics'
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
