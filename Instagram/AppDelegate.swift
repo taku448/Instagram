@@ -40,3 +40,5 @@ var window: UIWindow?  // 追加する
 
 
 }
+
+

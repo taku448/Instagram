@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FirebaseUI
 import SVProgressHUD
 
 
@@ -24,10 +25,10 @@ class PostTableViewCell: UITableViewCell {
     
     
     @IBOutlet weak var postCaptionTextField: UITextField!
-    @IBAction func createCaptionButton(_ sender: Any) {
-        
-        
+    
+    @IBAction func createCaptureButton(_ sender: Any) {
     }
+    
     @IBAction func postCaptionButton(_ sender: Any) {
         
         let name = Auth.auth().currentUser?.displayName
