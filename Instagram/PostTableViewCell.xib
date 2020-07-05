@@ -88,42 +88,9 @@
                 <outlet property="dateLabel" destination="UBX-e4-XmK" id="YUT-rs-vBB"/>
                 <outlet property="likeButton" destination="w9b-yd-7bM" id="2Vp-16-Xlt"/>
                 <outlet property="likeLabel" destination="G88-bz-43r" id="Mjh-Pd-lxV"/>
-                <outlet property="postCaptionTextField" destination="p6X-jX-VMX" id="pK3-Rm-JnK"/>
                 <outlet property="postImageView" destination="cec-Bh-oSa" id="FVJ-4I-yyd"/>
             </connections>
             <point key="canvasLocation" x="-55.072463768115945" y="12.723214285714285"/>
-        </tableViewCell>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell2" rowHeight="300" id="etz-Dy-Ofq" customClass="PostTableViewCell2" customModule="Instagram">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="300"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="etz-Dy-Ofq" id="gX8-8z-Hgv">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="300"/>
-                <autoresizingMask key="autoresizingMask"/>
-                <subviews>
-                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p6X-jX-VMX">
-                        <rect key="frame" x="10" y="10" width="300" height="34"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <textInputTraits key="textInputTraits"/>
-                    </textField>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oCJ-9I-hHy">
-                        <rect key="frame" x="137" y="54" width="46" height="30"/>
-                        <state key="normal" title="Button"/>
-                        <connections>
-                            <action selector="postCaptionButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="agX-aP-6FN"/>
-                        </connections>
-                    </button>
-                </subviews>
-                <constraints>
-                    <constraint firstItem="p6X-jX-VMX" firstAttribute="centerX" secondItem="gX8-8z-Hgv" secondAttribute="centerX" id="6Ga-PC-NoR"/>
-                    <constraint firstItem="oCJ-9I-hHy" firstAttribute="centerX" secondItem="gX8-8z-Hgv" secondAttribute="centerX" id="6U2-hu-bvD"/>
-                    <constraint firstItem="p6X-jX-VMX" firstAttribute="top" secondItem="gX8-8z-Hgv" secondAttribute="top" constant="10" id="AI2-qW-WDG"/>
-                    <constraint firstItem="oCJ-9I-hHy" firstAttribute="top" secondItem="p6X-jX-VMX" secondAttribute="bottom" constant="10" id="AQz-K8-xvh"/>
-                    <constraint firstItem="p6X-jX-VMX" firstAttribute="leading" secondItem="gX8-8z-Hgv" secondAttribute="leading" constant="10" id="gnL-aT-7GN"/>
-                    <constraint firstAttribute="trailing" secondItem="p6X-jX-VMX" secondAttribute="trailing" constant="10" id="ijS-3I-nsU"/>
-                </constraints>
-            </tableViewCellContentView>
-            <viewLayoutGuide key="safeArea" id="j7E-hW-IXW"/>
-            <point key="canvasLocation" x="-626.08695652173913" y="12.723214285714285"/>
         </tableViewCell>
     </objects>
     <resources>

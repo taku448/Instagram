@@ -25,6 +25,10 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
         tableView.delegate = self
         tableView.dataSource = self
+        
+         let nib = UINib(nibName: "PostTableViewCell", bundle: nil)
+            
+         tableView.register(nib, forCellReuseIdentifier: "Cell")
 
     }
 
@@ -77,7 +81,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             let cell = nib.instantiate(withOwner: self, options: nil)[0] as! PostTableViewCell
             cell.setPostData(postArray[indexPath.row / 2])
         }else{
-            let cell = nib.instantiate(withOwner: self, options: nil)[1] as! PostTableViewCell2
+            let cell = nib.instantiate(withOwner: self, options: nil)[0] as! PostTableViewCell2
             return cell
         }
     
