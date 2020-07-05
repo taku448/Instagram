@@ -10,6 +10,8 @@ import UIKit
 import Firebase
 import FirebaseUI
 import SVProgressHUD
+import SDWebImage
+
 
 
 class PostTableViewCell: UITableViewCell {

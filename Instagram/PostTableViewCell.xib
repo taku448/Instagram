@@ -9,7 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="300" id="KGk-i7-Jjw" customClass="PostTableViewCell" customModule="Instagram" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="300" id="KGk-i7-Jjw" customClass="PostTableViewCell" customModule="Instagram" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="300"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
@@ -91,9 +91,9 @@
                 <outlet property="postCaptionTextField" destination="p6X-jX-VMX" id="pK3-Rm-JnK"/>
                 <outlet property="postImageView" destination="cec-Bh-oSa" id="FVJ-4I-yyd"/>
             </connections>
-            <point key="canvasLocation" x="-270" y="33"/>
+            <point key="canvasLocation" x="-55.072463768115945" y="12.723214285714285"/>
         </tableViewCell>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="300" id="etz-Dy-Ofq" customClass="PostTableViewCell" customModule="Instagram" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell2" rowHeight="300" id="etz-Dy-Ofq" customClass="PostTableViewCell2" customModule="Instagram">
             <rect key="frame" x="0.0" y="0.0" width="320" height="300"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="etz-Dy-Ofq" id="gX8-8z-Hgv">
@@ -123,7 +123,7 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="j7E-hW-IXW"/>
-            <point key="canvasLocation" x="-855" y="33"/>
+            <point key="canvasLocation" x="-626.08695652173913" y="12.723214285714285"/>
         </tableViewCell>
     </objects>
     <resources>
