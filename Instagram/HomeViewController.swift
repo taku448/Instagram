@@ -77,11 +77,13 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         let nib = UINib(nibName: "PostTableViewCell", bundle: nil)
         
+        let nib2 = UINib(nibName: "PostTableViewCell2", bundle: nil)
+        
         if( indexPath.row % 2 == 0 ) {
             let cell = nib.instantiate(withOwner: self, options: nil)[0] as! PostTableViewCell
             cell.setPostData(postArray[indexPath.row / 2])
         }else{
-            let cell = nib.instantiate(withOwner: self, options: nil)[0] as! PostTableViewCell2
+            let cell = nib2.instantiate(withOwner: self, options: nil)[0] as! PostTableViewCell2
             return cell
         }
     
