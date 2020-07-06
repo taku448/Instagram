@@ -13,40 +13,13 @@ import SVProgressHUD
 import SDWebImage
 
 
-
 class PostTableViewCell: UITableViewCell {
-    
-    let postRef = Firestore.firestore().collection(Const.PostPath).document()
-    
 
     @IBOutlet weak var postImageView: UIImageView!
     @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var likeLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var captionLabel: UILabel!
-    
-    
-    @IBOutlet weak var postCaptionTextField: UITextField!
-    
-    @IBAction func createCaptureButton(_ sender: Any) {
-    }
-    
-    @IBAction func postCaptionButton(_ sender: Any) {
-        
-        let name = Auth.auth().currentUser?.displayName
-                   let postDic = [
-                       "name": name!,
-                       "caption": self.postCaptionTextField.text!
-                       ] as [String : Any]
-                   postRef.setData(postDic)
-                   // HUDで投稿完了を表示する
-                   SVProgressHUD.showSuccess(withStatus: "投稿しました")
-                   // 投稿処理が完了したので先頭画面に戻る
-                  UIApplication.shared.windows.first{ $0.isKeyWindow }?.rootViewController?.dismiss(animated: true, completion: nil)
-               }
-    
-    
-    
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -63,9 +36,7 @@ class PostTableViewCell: UITableViewCell {
     func setPostData(_ postData: PostData) {
         // 画像の表示
         postImageView.sd_imageIndicator = SDWebImageActivityIndicator.gray
-        
         let imageRef = Storage.storage().reference().child(Const.ImagePath).child(postData.id + ".jpg")
-        
         postImageView.sd_setImage(with: imageRef)
 
         // キャプションの表示

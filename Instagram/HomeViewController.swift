@@ -25,11 +25,10 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
         tableView.delegate = self
         tableView.dataSource = self
-        
-         let nib = UINib(nibName: "PostTableViewCell", bundle: nil)
-            
-         tableView.register(nib, forCellReuseIdentifier: "Cell")
 
+        // カスタムセルを登録する
+        let nib = UINib(nibName: "PostTableViewCell", bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: "Cell")
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -69,24 +68,11 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return postArray.count * 2
+        return postArray.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // セルを取得してデータを設定する
-        
-        let nib = UINib(nibName: "PostTableViewCell", bundle: nil)
-        
-        let nib2 = UINib(nibName: "PostTableViewCell2", bundle: nil)
-        
-        if( indexPath.row % 2 == 0 ) {
-            let cell = nib.instantiate(withOwner: self, options: nil)[0] as! PostTableViewCell
-            cell.setPostData(postArray[indexPath.row / 2])
-        }else{
-            let cell = nib2.instantiate(withOwner: self, options: nil)[0] as! PostTableViewCell2
-            return cell
-        }
-    
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! PostTableViewCell
         cell.setPostData(postArray[indexPath.row])
 
