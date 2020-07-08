@@ -16,7 +16,12 @@ class PostData: NSObject {
     var caption: String?
     var date: Date?
     var likes: [String] = []
+    // likeの数
     var isLiked: Bool = false
+    // likeした、しない
+    var comments: String?
+    
+    
 
     init(document: QueryDocumentSnapshot) {
         self.id = document.documentID

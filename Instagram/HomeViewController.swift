@@ -78,6 +78,9 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
         // セル内のボタンのアクションをソースコードで設定する
         cell.likeButton.addTarget(self, action:#selector(handleButton(_:forEvent:)), for: .touchUpInside)
+        
+        cell.sendMyCommentButton.addTarget(self, action:#selector(handleButton(_:forEvent:)), for: .touchUpInside)
+        
 
         return cell
     }
@@ -101,7 +104,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             if postData.isLiked {
                 // すでにいいねをしている場合は、いいね解除のためmyidを取り除く更新データを作成
                 updateValue = FieldValue.arrayRemove([myid])
-            } else {
+            }else {
                 // 今回新たにいいねを押した場合は、myidを追加する更新データを作成
                 updateValue = FieldValue.arrayUnion([myid])
             }
@@ -109,5 +112,30 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             let postRef = Firestore.firestore().collection(Const.PostPath).document(postData.id)
             postRef.updateData(["likes": updateValue])
         }
+        
+        }
+    @objc func sendMyCommentButton(_sender: UIButton, forEvent event: UIEvent){
+        
+        print("DEBUG_PRINT: sendMyCommentButtonがタップされました。")
+        
+        //投稿データの保存場所を定義する
+        let postRef = Firestore.firestore().collection(Const.PostPath).document()
+        //Firestoreに投稿データを保存する
+        let name = Auth.auth().currentUser?.displayName
+        let postDic = [
+            "name": name!,
+            "comments": PostTableViewCell.self.sendMyComment(<#T##self: PostTableViewCell##PostTableViewCell#>),
+            "date": FieldValue.serverTimestamp(),
+        ] as [String: Any]
+        
+        
+
+        
+        
     }
-}
+    
+        
+        
+    }
+
+
