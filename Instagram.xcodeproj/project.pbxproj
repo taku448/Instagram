@@ -11,6 +11,7 @@
 		E81CA47C24AC7229007EF321 /* PostData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81CA47B24AC7229007EF321 /* PostData.swift */; };
 		E81CA48524AC7357007EF321 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81CA48324AC7357007EF321 /* PostTableViewCell.swift */; };
 		E81CA48824AC9B82007EF321 /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E81CA48724AC9B82007EF321 /* PostTableViewCell.xib */; };
+		E864D98124B5D71F0065CFC9 /* MyCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E864D98024B5D71F0065CFC9 /* MyCommentViewController.swift */; };
 		E8E5A96EC8C0761F021444B9 /* Pods_Instagram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A78C54ECDE160F7B7C048C63 /* Pods_Instagram.framework */; };
 		E8F2FCFD24A82D63004CC0F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F2FCFC24A82D63004CC0F8 /* AppDelegate.swift */; };
 		E8F2FCFF24A82D63004CC0F8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F2FCFE24A82D63004CC0F8 /* SceneDelegate.swift */; };
@@ -34,6 +35,7 @@
 		E81CA47B24AC7229007EF321 /* PostData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostData.swift; sourceTree = "<group>"; };
 		E81CA48324AC7357007EF321 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		E81CA48724AC9B82007EF321 /* PostTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
+		E864D98024B5D71F0065CFC9 /* MyCommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCommentViewController.swift; sourceTree = "<group>"; };
 		E8F2FCF924A82D63004CC0F8 /* Instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8F2FCFC24A82D63004CC0F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E8F2FCFE24A82D63004CC0F8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				E81CA47B24AC7229007EF321 /* PostData.swift */,
 				E81CA48324AC7357007EF321 /* PostTableViewCell.swift */,
 				E81CA48724AC9B82007EF321 /* PostTableViewCell.xib */,
+				E864D98024B5D71F0065CFC9 /* MyCommentViewController.swift */,
 				E8F2FD1224A82E25004CC0F8 /* HomeViewController.swift */,
 				E8F2FD1424A82E38004CC0F8 /* ImageSelectViewController.swift */,
 				E8F2FD1624A82E4A004CC0F8 /* PostViewController.swift */,
@@ -246,6 +249,7 @@
 				E8F2FD1924A82E5B004CC0F8 /* SettingViewController.swift in Sources */,
 				E81CA47824AC7138007EF321 /* Const.swift in Sources */,
 				E8F2FD1124A82E05004CC0F8 /* LoginViewController.swift in Sources */,
+				E864D98124B5D71F0065CFC9 /* MyCommentViewController.swift in Sources */,
 				E8F2FCFD24A82D63004CC0F8 /* AppDelegate.swift in Sources */,
 				E81CA47C24AC7229007EF321 /* PostData.swift in Sources */,
 				E8F2FCFF24A82D63004CC0F8 /* SceneDelegate.swift in Sources */,

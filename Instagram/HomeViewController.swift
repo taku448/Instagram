@@ -79,7 +79,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // セル内のボタンのアクションをソースコードで設定する
         cell.likeButton.addTarget(self, action:#selector(handleButton(_:forEvent:)), for: .touchUpInside)
         
-        cell.sendMyCommentButton.addTarget(self, action:#selector(handleButton(_:forEvent:)), for: .touchUpInside)
         
 
         return cell
@@ -114,17 +113,22 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
         
         }
-    @objc func sendMyCommentButton(_sender: UIButton, forEvent event: UIEvent){
+    
+    @objc func createMyCommentButton(_sender: UIButton, forEvent event: UIEvent){
         
-        print("DEBUG_PRINT: sendMyCommentButtonがタップされました。")
+        
         
         //投稿データの保存場所を定義する
         let postRef = Firestore.firestore().collection(Const.PostPath).document()
         //Firestoreに投稿データを保存する
         let name = Auth.auth().currentUser?.displayName
+        let comments = self.myCommentTextField.text
+        
+        
+        
         let postDic = [
             "name": name!,
-            "comments": PostTableViewCell.self.sendMyComment(<#T##self: PostTableViewCell##PostTableViewCell#>),
+            "comments":       ,
             "date": FieldValue.serverTimestamp(),
         ] as [String: Any]
         

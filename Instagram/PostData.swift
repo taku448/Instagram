@@ -15,10 +15,11 @@ class PostData: NSObject {
     var name: String?
     var caption: String?
     var date: Date?
+    //likeの数
     var likes: [String] = []
-    // likeの数
+    //likeした、しない
     var isLiked: Bool = false
-    // likeした、しない
+    //
     var comments: String?
     
     

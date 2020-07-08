@@ -327,6 +327,44 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
         </scene>
+        <!--My Comment View Controller-->
+        <scene sceneID="TbB-L0-F8g">
+            <objects>
+                <viewController id="Fzp-Y0-VSR" customClass="MyCommentViewController" customModule="Instagram" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0jh-2j-4QS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FJm-kT-Zab">
+                                <rect key="frame" x="10" y="84" width="394" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NJD-wF-Wgm">
+                                <rect key="frame" x="184" y="128" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="VS5-GG-VZX" firstAttribute="trailing" secondItem="FJm-kT-Zab" secondAttribute="trailing" constant="10" id="A8c-Ui-9Rh"/>
+                            <constraint firstItem="FJm-kT-Zab" firstAttribute="centerX" secondItem="0jh-2j-4QS" secondAttribute="centerX" id="CML-b2-3fG"/>
+                            <constraint firstItem="NJD-wF-Wgm" firstAttribute="centerX" secondItem="0jh-2j-4QS" secondAttribute="centerX" id="VtI-gV-Nff"/>
+                            <constraint firstItem="NJD-wF-Wgm" firstAttribute="top" secondItem="FJm-kT-Zab" secondAttribute="bottom" constant="10" id="f4a-iZ-rH6"/>
+                            <constraint firstItem="FJm-kT-Zab" firstAttribute="leading" secondItem="VS5-GG-VZX" secondAttribute="leading" constant="10" id="jy6-5R-dOG"/>
+                            <constraint firstItem="FJm-kT-Zab" firstAttribute="top" secondItem="VS5-GG-VZX" secondAttribute="top" constant="40" id="lOo-6T-UXz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="VS5-GG-VZX"/>
+                    </view>
+                    <connections>
+                        <outlet property="myCommentButton" destination="NJD-wF-Wgm" id="6jR-zv-eWk"/>
+                        <outlet property="myCommentTextField" destination="FJm-kT-Zab" id="BCe-Ij-eF6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eiR-7r-70I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="1727.6785714285713"/>
+        </scene>
     </scenes>
     <resources>
         <image name="btn" width="300" height="40"/>

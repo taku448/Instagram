@@ -13,7 +13,7 @@ import SVProgressHUD
 import SDWebImage
 
 
-class PostTableViewCell: UITableViewCell {
+class PostTableViewCell: UITableViewCell, UITextFieldDelegate {
 
     @IBOutlet weak var postImageView: UIImageView!
     @IBOutlet weak var likeButton: UIButton!
@@ -21,18 +21,20 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var captionLabel: UILabel!
     
-    @IBOutlet weak var othersComment: UILabel!
-    @IBOutlet weak var myComment: UILabel!
-    @IBOutlet weak var sendMyCommentButton: UIButton!
     
-    @IBAction func sendMyComment(_ sender: Any) {
+    @IBOutlet weak var othersCommentsLabel: UILabel!
+    
+    @IBAction func createMyCommentButton(_ sender: Any) {
         
     }
     
     
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         // Initialization code
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -51,7 +53,11 @@ class PostTableViewCell: UITableViewCell {
 
         // キャプションの表示
         self.captionLabel.text = "\(postData.name!) : \(postData.caption!)"
+        
+        //コメントの表示
+        self.othersCommentsLabel.text = "\(postData.name!) : \(postData.comments!)"
 
+        
         // 日時の表示
         self.dateLabel.text = ""
         if let date = postData.date {
