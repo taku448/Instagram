@@ -20,11 +20,17 @@ class PostTableViewCell: UITableViewCell, UITextFieldDelegate {
     @IBOutlet weak var likeLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var captionLabel: UILabel!
+    @IBOutlet weak var commentLabel: UILabel!
     
+    @IBOutlet weak var createMyCommentButton: UIButton!
     
-    @IBOutlet weak var othersCommentsLabel: UILabel!
     
     @IBAction func createMyCommentButton(_ sender: Any) {
+        
+        
+        
+        
+        
         
     }
     
@@ -54,9 +60,7 @@ class PostTableViewCell: UITableViewCell, UITextFieldDelegate {
         // キャプションの表示
         self.captionLabel.text = "\(postData.name!) : \(postData.caption!)"
         
-        //コメントの表示
-        self.othersCommentsLabel.text = "\(postData.name!) : \(postData.comments!)"
-
+        self.commentLabel.text = "\(String(describing: postData.comments))"
         
         // 日時の表示
         self.dateLabel.text = ""

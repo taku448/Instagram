@@ -330,7 +330,7 @@
         <!--My Comment View Controller-->
         <scene sceneID="TbB-L0-F8g">
             <objects>
-                <viewController id="Fzp-Y0-VSR" customClass="MyCommentViewController" customModule="Instagram" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mycomment" id="Fzp-Y0-VSR" customClass="MyCommentViewController" customModule="Instagram" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0jh-2j-4QS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -343,6 +343,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NJD-wF-Wgm">
                                 <rect key="frame" x="184" y="128" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="sendMyCommentButton:" destination="Fzp-Y0-VSR" eventType="touchUpInside" id="6er-Xf-P9t"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>

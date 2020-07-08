@@ -105,10 +105,11 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="captionLabel" destination="HfW-T2-5B6" id="3iG-IM-8lo"/>
+                <outlet property="commentLabel" destination="5wg-lm-Pij" id="kt1-21-CgN"/>
+                <outlet property="createMyCommentButton" destination="Fct-b8-kDZ" id="hs4-wz-U8g"/>
                 <outlet property="dateLabel" destination="UBX-e4-XmK" id="YUT-rs-vBB"/>
                 <outlet property="likeButton" destination="w9b-yd-7bM" id="2Vp-16-Xlt"/>
                 <outlet property="likeLabel" destination="G88-bz-43r" id="Mjh-Pd-lxV"/>
-                <outlet property="othersCommentsLabel" destination="5wg-lm-Pij" id="MbQ-2y-HdE"/>
                 <outlet property="postImageView" destination="cec-Bh-oSa" id="FVJ-4I-yyd"/>
             </connections>
             <point key="canvasLocation" x="-299" y="107"/>

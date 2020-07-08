@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class MyCommentViewController: UIViewController, UITextFieldDelegate  {
     
@@ -14,17 +15,35 @@ class MyCommentViewController: UIViewController, UITextFieldDelegate  {
     
     @IBOutlet weak var myCommentButton: UIButton!
     
+    
+    
+    
+    
+    
     override func awakeFromNib() {
         
         super.awakeFromNib()
-        myCommentTextField.delegate? = self
-        
         // Initialization code
+        
+    }
+    @IBAction func sendMyCommentButton(_ sender: Any) {
+        
+         print("DEBUG_PRINT: sendMyCommentButton")
+        
+        //投稿データの保存場所を定義する
+        let postRef = Firestore.firestore().collection(Const.PostPath).document()
+        //Firestoreに投稿データを保存する
+        let name = Auth.auth().currentUser?.displayName
+        let comments = "\(String(describing: name)) : \(String(describing: self.myCommentTextField.text))"
+        
+        postRef.updateData(["comments": comments])
         
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
 
         // Do any additional setup after loading the view.
     }

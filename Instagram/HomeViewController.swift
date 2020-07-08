@@ -80,6 +80,9 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         cell.likeButton.addTarget(self, action:#selector(handleButton(_:forEvent:)), for: .touchUpInside)
         
         
+        cell.createMyCommentButton.addTarget(self, action:#selector(createMyCommentButton(_sender:forEvent:)), for: .touchUpInside)
+        
+        
 
         return cell
     }
@@ -116,24 +119,19 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     @objc func createMyCommentButton(_sender: UIButton, forEvent event: UIEvent){
         
-        
-        
-        //投稿データの保存場所を定義する
-        let postRef = Firestore.firestore().collection(Const.PostPath).document()
-        //Firestoreに投稿データを保存する
-        let name = Auth.auth().currentUser?.displayName
-        let comments = self.myCommentTextField.text
-        
-        
-        
-        let postDic = [
-            "name": name!,
-            "comments":       ,
-            "date": FieldValue.serverTimestamp(),
-        ] as [String: Any]
-        
-        
+        // タップされたセルのインデックスを求める
+        let touch = event.allTouches?.first
+        let point = touch!.location(in: self.tableView)
+        let indexPath = tableView.indexPathForRow(at: point)
+        // 配列からタップされたインデックスのデータを取り出す
+        let postData = postArray[indexPath!.row]
 
+        
+        let storyboard: UIStoryboard = self.storyboard!
+               let mycomment = storyboard.instantiateViewController(withIdentifier: "mycomment")
+               
+               self.present(mycomment, animated: true, completion: nil)
+               
         
         
     }
