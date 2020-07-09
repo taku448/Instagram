@@ -17,6 +17,8 @@ class MyCommentViewController: UIViewController {
     
     @IBOutlet weak var myCommentButton: UIButton!
     
+    var postArray: [PostData] = []
+    
     override func awakeFromNib() {
         
         super.awakeFromNib()
@@ -30,17 +32,25 @@ class MyCommentViewController: UIViewController {
          print("DEBUG_PRINT: sendMyCommentButton")
         
         //投稿データの保存場所を定義する
-        let postRef = Firestore.firestore().collection(Const.PostPath).document()
-    
-        
         //Firestoreに投稿データを保存する
         let name = Auth.auth().currentUser?.displayName
+        let id = Auth.auth().currentUser?.uid
+        
+        var updateValue: FieldValue
+        
         let postDic = [
+            "id":  id!,
             "name": name!,
             "comment": self.myCommentTextField.text!,
         ] as [String : Any]
         
-        postRef.setData(postDic)
+        updateValue = FieldValue.arrayUnion([id as Any])
+        
+        let postRef = Firestore.firestore().collection(Const.PostPath).document(postData.id)
+        
+        
+        postRef.updateData(["comment": updateValue])
+        
         
         SVProgressHUD.showSuccess(withStatus: "投稿しました")
         
