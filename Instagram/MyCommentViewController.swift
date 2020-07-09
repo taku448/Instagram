@@ -8,21 +8,20 @@
 
 import UIKit
 import Firebase
+import SVProgressHUD
 
-class MyCommentViewController: UIViewController, UITextFieldDelegate  {
+
+class MyCommentViewController: UIViewController {
     
     @IBOutlet weak var myCommentTextField: UITextField!
     
     @IBOutlet weak var myCommentButton: UIButton!
     
-    
-    
-    
-    
-    
     override func awakeFromNib() {
         
         super.awakeFromNib()
+        
+        
         // Initialization code
         
     }
@@ -32,11 +31,25 @@ class MyCommentViewController: UIViewController, UITextFieldDelegate  {
         
         //投稿データの保存場所を定義する
         let postRef = Firestore.firestore().collection(Const.PostPath).document()
+    
+        
         //Firestoreに投稿データを保存する
         let name = Auth.auth().currentUser?.displayName
-        let comments = "\(String(describing: name)) : \(String(describing: self.myCommentTextField.text))"
+        let postDic = [
+            "name": name!,
+            "comment": self.myCommentTextField.text!,
+        ] as [String : Any]
         
-        postRef.updateData(["comments": comments])
+        postRef.setData(postDic)
+        
+        SVProgressHUD.showSuccess(withStatus: "投稿しました")
+        
+        let storyboard: UIStoryboard = self.storyboard!
+        let Home = storyboard.instantiateViewController(withIdentifier: "Home")
+        
+        self.present(Home, animated: true, completion: nil)
+        
+        
         
     }
     

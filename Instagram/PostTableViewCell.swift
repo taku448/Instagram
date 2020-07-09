@@ -27,11 +27,6 @@ class PostTableViewCell: UITableViewCell, UITextFieldDelegate {
     
     @IBAction func createMyCommentButton(_ sender: Any) {
         
-        
-        
-        
-        
-        
     }
     
     
@@ -60,7 +55,8 @@ class PostTableViewCell: UITableViewCell, UITextFieldDelegate {
         // キャプションの表示
         self.captionLabel.text = "\(postData.name!) : \(postData.caption!)"
         
-        self.commentLabel.text = "\(String(describing: postData.comments))"
+        //コメントの表示
+        self.commentLabel.text = "\(String(describing: postData.comment))"
         
         // 日時の表示
         self.dateLabel.text = ""
