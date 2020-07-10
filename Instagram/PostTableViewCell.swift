@@ -22,20 +22,19 @@ class PostTableViewCell: UITableViewCell, UITextFieldDelegate {
     @IBOutlet weak var captionLabel: UILabel!
     @IBOutlet weak var commentLabel: UILabel!
     
+    func setCommentLabel(＿commentLabel: PostTableViewCell) {
+        self.commentLabel.text = ""
+    }
+    
     @IBOutlet weak var createMyCommentButton: UIButton!
     
     
     @IBAction func createMyCommentButton(_ sender: Any) {
         
     }
-    
-    
-    
     override func awakeFromNib() {
         super.awakeFromNib()
-        
         // Initialization code
-        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -61,10 +60,8 @@ class PostTableViewCell: UITableViewCell, UITextFieldDelegate {
         
         
         //コメントの表示
-        print(postData.comment as Any)
-        self.commentLabel.text = "\(postData.name!) :\(String(describing: postData.comment))"
+        self.commentLabel.text = "\(postData.name!) : \(String(describing: postData.comment!))"
 
-        
         // 日時の表示
         self.dateLabel.text = ""
         if let date = postData.date {

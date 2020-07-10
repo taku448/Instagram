@@ -31,7 +31,7 @@ class MyCommentViewController: UIViewController {
         
         let postRef = Firestore.firestore().collection(Const.PostPath).document(outputValue.id)
         
-        postRef.updateData(["comment!": self.myCommentTextField.text as Any])
+        postRef.updateData(["comment": self.myCommentTextField.text as Any])
         
         
         

@@ -21,7 +21,7 @@ class PostData: NSObject {
     //likeした、しない
     var isLiked: Bool = false
     //コメント
-    var comment: String!
+    var comment: String?
     
     
 
