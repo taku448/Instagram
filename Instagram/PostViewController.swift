@@ -47,7 +47,11 @@ class PostViewController: UIViewController {
                 "caption": self.textField.text!,
                 "date": FieldValue.serverTimestamp(),
                 ] as [String : Any]
+            
             postRef.setData(postDic)
+            
+            //documentIDの取得
+            SVProgressHUD.showSuccess(withStatus: "\(postRef.documentID as Any)")
             
         
             // HUDで投稿完了を表示する

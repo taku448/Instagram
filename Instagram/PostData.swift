@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import SVProgressHUD
 
 class PostData: NSObject {
     
@@ -34,6 +35,8 @@ class PostData: NSObject {
         self.caption = postDic["caption"] as? String
         
         self.comment = postDic["comment"] as? String
+        
+        SVProgressHUD.showSuccess(withStatus: "\(self.comment as Any)")
 
         let timestamp = postDic["date"] as? Timestamp
         self.date = timestamp?.dateValue()

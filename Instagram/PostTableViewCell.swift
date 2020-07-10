@@ -52,11 +52,18 @@ class PostTableViewCell: UITableViewCell, UITextFieldDelegate {
         let imageRef = Storage.storage().reference().child(Const.ImagePath).child(postData.id + ".jpg")
         postImageView.sd_setImage(with: imageRef)
 
+        let postRef = Firestore.firestore().collection(Const.PostPath).document()
+               
+        postRef.documentID
+          
         // キャプションの表示
         self.captionLabel.text = "\(postData.name!) : \(postData.caption!)"
         
+        
         //コメントの表示
-        self.commentLabel.text = "\(String(describing: postData.comment))"
+        print(postData.comment as Any)
+        self.commentLabel.text = "\(postData.name!) :\(String(describing: postData.comment))"
+
         
         // 日時の表示
         self.dateLabel.text = ""

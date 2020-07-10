@@ -78,6 +78,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // セルを取得してデータを設定する
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! PostTableViewCell
+        
         cell.setPostData(postArray[indexPath.row])
         
         //
@@ -121,6 +122,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             // likesに更新データを書き込む
             let postRef = Firestore.firestore().collection(Const.PostPath).document(postData.id)
             postRef.updateData(["likes": updateValue])
+            
+            
         }
         
         }
@@ -130,16 +133,24 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // タップされたセルのインデックスを求める
         let touch = event.allTouches?.first
         let point = touch!.location(in: self.tableView)
-        let indexPath = tableView.indexPathForRow(at: point)
+       let indexPath = tableView.indexPathForRow(at: point)
         // 配列からタップされたインデックスのデータを取り出す
         let postData = postArray[indexPath!.row]
+                //documentIDをMyCommentViewControllerへ渡す
+        let next = storyboard!.instantiateViewController(withIdentifier: "mycomment") as! MyCommentViewController
+        
+        next.outputValue = postData
+        
+        let postRef = Firestore.firestore().collection(Const.PostPath).document(postData.id)
+
+        let storyboard: UIStoryboard = self.storyboard!
+        
+        
+        
 
         
         
-        let storyboard: UIStoryboard = self.storyboard!
-               let mycomment = storyboard.instantiateViewController(withIdentifier: "mycomment")
-               
-               self.present(mycomment, animated: true, completion: nil)
+               self.present(next, animated: true, completion: nil)
                
         
         
