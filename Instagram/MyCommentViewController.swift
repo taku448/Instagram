@@ -17,7 +17,7 @@ class MyCommentViewController: UIViewController {
     
     @IBOutlet weak var myCommentButton: UIButton!
     
-    var outputValue: String = ""
+    var outputValue: PostData!
     
     override func awakeFromNib() {
         
@@ -29,9 +29,9 @@ class MyCommentViewController: UIViewController {
         
          print("DEBUG_PRINT: sendMyCommentButton")
         
-        let postRef = Firestore.firestore().collection(Const.PostPath).document()
+        let postRef = Firestore.firestore().collection(Const.PostPath).document(outputValue.id)
         
-        postRef.updateData(["comment": self.myCommentTextField.text as Any])
+        postRef.updateData(["comment!": self.myCommentTextField.text as Any])
         
         
         
