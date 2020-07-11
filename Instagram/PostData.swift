@@ -36,7 +36,7 @@ class PostData: NSObject {
         
         self.comment = postDic["comment"] as? String
         
-        SVProgressHUD.showSuccess(withStatus: "\(self.comment as Any)")
+        
 
         let timestamp = postDic["date"] as? Timestamp
         self.date = timestamp?.dateValue()

@@ -22,8 +22,9 @@ class PostTableViewCell: UITableViewCell, UITextFieldDelegate {
     @IBOutlet weak var captionLabel: UILabel!
     @IBOutlet weak var commentLabel: UILabel!
     
-    func setCommentLabel(＿commentLabel: PostTableViewCell) {
+    func setCommentLabel(){
         self.commentLabel.text = ""
+        
     }
     
     @IBOutlet weak var createMyCommentButton: UIButton!
@@ -58,12 +59,13 @@ class PostTableViewCell: UITableViewCell, UITextFieldDelegate {
         // キャプションの表示
         self.captionLabel.text = "\(postData.name!) : \(postData.caption!)"
         
-        
+        self.commentLabel.text = ""
         //コメントの表示
-        self.commentLabel.text = "\(postData.name!) : \(String(describing: postData.comment!))"
+        self.commentLabel.text = "\(postData.name!) : \(String(describing: postData.comment))"
 
         // 日時の表示
         self.dateLabel.text = ""
+        
         if let date = postData.date {
             let formatter = DateFormatter()
             formatter.dateFormat = "yyyy-MM-dd HH:mm"
