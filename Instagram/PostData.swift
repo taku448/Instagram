@@ -22,6 +22,8 @@ class PostData: NSObject {
     var isLiked: Bool = false
     //コメント
     var comment: String?
+    //コメント時刻
+    //var commentDate: Date?
     
     
 
@@ -34,10 +36,16 @@ class PostData: NSObject {
 
         self.caption = postDic["caption"] as? String
         
+         //print("comment_debug_print", self.comment as Any)
+        
         self.comment = postDic["comment"] as? String
         
-        
+        //print("comment_debug_print", postDic["comment"] as Any)
+        //print("comment_debug_print", self.comment as Any)
+        //let commenttimestamp = postDic["commentDate"] as? Timestamp
+        //self.commentDate = commenttimestamp?.dateValue()
 
+        
         let timestamp = postDic["date"] as? Timestamp
         self.date = timestamp?.dateValue()
 

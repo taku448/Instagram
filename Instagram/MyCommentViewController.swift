@@ -15,35 +15,29 @@ class MyCommentViewController: UIViewController {
     
     @IBOutlet weak var myCommentTextField: UITextField!
     
+    
     @IBOutlet weak var myCommentButton: UIButton!
     
-    var outputValue: PostData!
+    var outputValue: PostData! = nil
     
     override func awakeFromNib() {
         
         super.awakeFromNib()
         // Initialization code
-        
     }
     @IBAction func sendMyCommentButton(_ sender: Any) {
         
-         print("DEBUG_PRINT: sendMyCommentButton")
+       // print("comment_DEBUG_PRINT: sendMyCommentButtonが押されました。")
         
         let postRef = Firestore.firestore().collection(Const.PostPath).document(outputValue.id)
         
         postRef.updateData(["comment": self.myCommentTextField.text as Any])
         
+
         
+        //SVProgressHUD.showSuccess(withStatus: self.myCommentTextField.text)
         
-     //   let name = Auth.auth().currentUser?.displayName
-     //   let postDic = [
-     //
-        //id": outputValue,
-          //  "name": name!,
-            //"comment": self.myCommentTextField.text!,
-       // ] as [String : Any]
-        
-      //  postRef.setData(postDic)
+        //postRef.updateData(["commentdate": FieldValue.serverTimestamp()])
         
         SVProgressHUD.showSuccess(withStatus: "投稿しました")
         

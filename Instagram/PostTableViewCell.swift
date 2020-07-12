@@ -21,12 +21,6 @@ class PostTableViewCell: UITableViewCell, UITextFieldDelegate {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var captionLabel: UILabel!
     @IBOutlet weak var commentLabel: UILabel!
-    
-    func setCommentLabel(){
-        self.commentLabel.text = ""
-        
-    }
-    
     @IBOutlet weak var createMyCommentButton: UIButton!
     
     
@@ -43,7 +37,6 @@ class PostTableViewCell: UITableViewCell, UITextFieldDelegate {
 
         // Configure the view for the selected state
     }
-
     // PostDataの内容をセルに表示
     func setPostData(_ postData: PostData) {
         // 画像の表示
@@ -54,15 +47,18 @@ class PostTableViewCell: UITableViewCell, UITextFieldDelegate {
 
         let postRef = Firestore.firestore().collection(Const.PostPath).document()
                
-        postRef.documentID
-          
+        _ = postRef.documentID
+        
         // キャプションの表示
         self.captionLabel.text = "\(postData.name!) : \(postData.caption!)"
         
-        self.commentLabel.text = ""
         //コメントの表示
         self.commentLabel.text = "\(postData.name!) : \(String(describing: postData.comment))"
-
+        
+       // print("comment_debug_print:", self.commentLabel.text!)
+        
+        //SVProgressHUD.showSuccess(withStatus: self.commentLabel.text)
+        
         // 日時の表示
         self.dateLabel.text = ""
         

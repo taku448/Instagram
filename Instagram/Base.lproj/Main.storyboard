@@ -133,7 +133,7 @@
         <!--ホーム-->
         <scene sceneID="IaG-Fi-1wA">
             <objects>
-                <viewController storyboardIdentifier="Home" id="l2K-2O-DfY" customClass="HomeViewController" customModule="Instagram" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Home" modalPresentationStyle="fullScreen" id="l2K-2O-DfY" customClass="HomeViewController" customModule="Instagram" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fqr-jC-C9Q">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -330,7 +330,7 @@
         <!--My Comment View Controller-->
         <scene sceneID="TbB-L0-F8g">
             <objects>
-                <viewController storyboardIdentifier="mycomment" id="Fzp-Y0-VSR" customClass="MyCommentViewController" customModule="Instagram" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mycomment" modalPresentationStyle="fullScreen" id="Fzp-Y0-VSR" customClass="MyCommentViewController" customModule="Instagram" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0jh-2j-4QS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -361,7 +361,7 @@
                     </view>
                     <connections>
                         <outlet property="myCommentButton" destination="NJD-wF-Wgm" id="6jR-zv-eWk"/>
-                        <outlet property="myCommentTextField" destination="FJm-kT-Zab" id="BCe-Ij-eF6"/>
+                        <outlet property="myCommentTextField" destination="FJm-kT-Zab" id="ELU-fG-SXe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eiR-7r-70I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

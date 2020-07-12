@@ -19,6 +19,9 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
     // Firestoreのリスナー
     var listener: ListenerRegistration!
+    
+    let postRef = Firestore.firestore().collection(Const.PostPath).document()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -133,27 +136,21 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // タップされたセルのインデックスを求める
         let touch = event.allTouches?.first
         let point = touch!.location(in: self.tableView)
-       let indexPath = tableView.indexPathForRow(at: point)
+        let indexPath = tableView.indexPathForRow(at: point)
         // 配列からタップされたインデックスのデータを取り出す
         let postData = postArray[indexPath!.row]
-                //documentIDをMyCommentViewControllerへ渡す
+        //documentIDをMyCommentViewControllerへ渡す
         let next = storyboard!.instantiateViewController(withIdentifier: "mycomment") as! MyCommentViewController
         
         next.outputValue = postData
         
-        let postRef = Firestore.firestore().collection(Const.PostPath).document(postData.id)
+        let postRef =
+    Firestore.firestore().collection(Const.PostPath).document(postData.id)
 
         let storyboard: UIStoryboard = self.storyboard!
         
-        
-        
-
-        
-        
                self.present(next, animated: true, completion: nil)
                
-        
-        
     }
     
         

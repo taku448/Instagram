@@ -102,6 +102,7 @@
                     <constraint firstItem="w9b-yd-7bM" firstAttribute="top" secondItem="cec-Bh-oSa" secondAttribute="bottom" constant="10" id="yhW-NY-laf"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" red="0.82101046230857022" green="0.91094893197870075" blue="0.92090195417404175" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="captionLabel" destination="HfW-T2-5B6" id="3iG-IM-8lo"/>
@@ -111,6 +112,7 @@
                 <outlet property="likeButton" destination="w9b-yd-7bM" id="2Vp-16-Xlt"/>
                 <outlet property="likeLabel" destination="G88-bz-43r" id="Mjh-Pd-lxV"/>
                 <outlet property="postImageView" destination="cec-Bh-oSa" id="FVJ-4I-yyd"/>
+                <outletCollection property="commentLabel" destination="QOl-Ae-5gT" collectionClass="NSMutableArray" id="wRU-Kx-dmh"/>
             </connections>
             <point key="canvasLocation" x="-300" y="95.424107142857139"/>
         </tableViewCell>
