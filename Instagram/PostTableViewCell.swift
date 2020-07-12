@@ -52,8 +52,19 @@ class PostTableViewCell: UITableViewCell, UITextFieldDelegate {
         // キャプションの表示
         self.captionLabel.text = "\(postData.name!) : \(postData.caption!)"
         
+        
+        self.commentLabel.text = ""
+        if let comment = postData.comment{
+            
+            self.commentLabel.text = "\(postData.name!) : \(comment)"
+        }
+            
+            
+        
         //コメントの表示
-        self.commentLabel.text = "\(postData.name!) : \(String(describing: postData.comment))"
+        
+            
+        
         
        // print("comment_debug_print:", self.commentLabel.text!)
         

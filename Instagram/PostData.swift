@@ -38,7 +38,12 @@ class PostData: NSObject {
         
          //print("comment_debug_print", self.comment as Any)
         
-        self.comment = postDic["comment"] as? String
+        
+       self.comment = postDic["comment"] as? String
+        
+       // if let comment = postDic["comment"] as? String {
+       //     self.comment = comment
+       // }
         
         //print("comment_debug_print", postDic["comment"] as Any)
         //print("comment_debug_print", self.comment as Any)
